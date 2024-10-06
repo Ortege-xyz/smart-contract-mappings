@@ -1,0 +1,39 @@
+# Filename: swap-helper.yaml
+
+contract:
+  name: dex_alex
+  description: Smart contract for the ALEX decentralized exchange.
+  lakehouse_db: stacks
+  lakehouse_version: 2
+  address: SP3K8BC0PPEVCV7NZ6QSRWPQ2JE9E5B6N3PA0KBR9.amm-swap-pool-v1-1
+
+functions:
+  - name: swap-helper
+    description: Executes a token swap between token X and token Y.
+    inputs:
+      - parameter: token-x-address
+        type: varchar(66)
+        source: contract_calls.function_args[0]
+      - parameter: token-y-address
+        type: varchar(66)
+        source: contract_calls.function_args[1]
+      - parameter: amount-x
+        type: bigint
+        source: contract_calls.function_args[3]
+      - parameter: amount-y
+        type: bigint
+        source: contract_call.function_args[4]
+    calc_fields:
+      - name: token-x-amount
+        type: bigint
+        expression: contract_calls.function_args[3] / contract_calls.function_args[4]
+      - name: token-y-amount
+        type: uint
+        source: events[2].asset.amount
+    events:
+      - name: swap-event
+        type: transfer
+        asset: token-y-address
+        amount: events[2].asset.amount
+        from: contract
+        to: user

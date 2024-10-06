@@ -1,0 +1,22 @@
+{
+  "name": "smart-contract-mappings",
+  "version": "0.1.0",
+  "description": "Mapping smart contract logs and events to a standardized data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ortege-xyz/smart-contract-mappings.git"
+  },
+  "author": "Justin Trollip",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ortege-xyz/smart-contract-mappings/issues"
+  },
+  "homepage": "https://github.com/Ortege-xyz/smart-contract-mappings#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
