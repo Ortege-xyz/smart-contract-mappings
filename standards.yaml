@@ -1,0 +1,75 @@
+lending:
+  required_functions:
+    - name: supply
+      description: "Supply assets to the lending protocol."
+      required: true
+      required_fields:
+        - name: supply_token
+          type: string
+          required: true
+          source: string 
+        - name: supply_amount
+          type: number
+          required: true
+          source: string 
+        - name: 
+    - name: withdraw
+      description: "Withdraw supplied assets from the lending protocol."
+      required: true
+      inputs:
+        - parameter: asset
+          type: string
+          required: true
+          source: string
+        - parameter: amount
+          type: number
+          required: true
+          source: string
+    - name: borrow
+      description: "Borrow assets from the lending protocol."
+      required: true
+      inputs:
+        - parameter: asset
+          type: string
+          required: true
+          source: string
+        - parameter: amount
+          type: number
+          required: true
+          source: string
+        - parameter: collateral
+          type: string
+          required: true
+          source: string
+    - name: repay
+      description: "Repay borrowed assets to the lending protocol."
+      required: true
+      inputs:
+        - parameter: asset
+          type: string
+          required: true
+          source: string
+        - parameter: amount
+          type: number
+          required: true
+          source: string
+    - name: liquidation_call
+      description: "Liquidate an undercollateralized position."
+      required: true
+      inputs:
+        - parameter: collateral_asset
+          type: string
+          required: true
+          source: string
+        - parameter: debt_asset
+          type: string
+          required: true
+          source: string
+        - parameter: user
+          type: string
+          required: true
+          source: string
+        - parameter: debt_to_cover
+          type: number
+          required: true
+          source: string

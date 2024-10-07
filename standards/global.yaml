@@ -1,0 +1,30 @@
+# Allowed categories
+allowed_categories:
+  - lending
+  - dex
+  - liquid_staking
+  - staking
+
+# Global required fields for all submitted contracts
+global_required_fields:
+  contract:
+    name:
+      type: string
+      required: true
+    category:
+      type: string
+      required: true
+      allowed_values: &allowed_categories
+        - *allowed_categories
+    description:
+      type: string
+      required: true
+    lakehouse_db:
+      type: string
+      required: true
+    lakehouse_version:
+      type: integer
+      required: true
+    address:
+      type: array of strings
+      required: true

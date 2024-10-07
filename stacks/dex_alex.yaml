@@ -1,7 +1,8 @@
 # Filename: swap-helper.yaml
 
 contract:
-  name: dex_alex
+  name: alex
+  category: dex
   description: Smart contract for the ALEX decentralized exchange.
   lakehouse_db: stacks
   lakehouse_version: 2

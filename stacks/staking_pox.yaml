@@ -1,0 +1,21 @@
+contract:
+  name: staking-pox
+  category: staking
+  description: "Contracts for Stacks Proof of Transfer (PoX) staking."
+  lakehouse_db: stacks
+  lakehouse_version: 2
+  contracts:
+    - contract_name: pox_v3
+      address: SP000000000000000000002Q6VF78.pox-3
+      functions:
+        - name: delegate-stack-stx
+          description: "Delegate STX for stacking in PoX v3."
+        - name: revoke-delegate-stx
+          description: "Revoke STX delegation in PoX v1."
+    - contract_name: pox_v4
+      address: SP000000000000000000002Q6VF78.pox-4
+      functions:
+        - name: delegate-stack-stx
+          description: "Delegate STX for stacking in PoX v4."
+        - name: stack-extend
+          description: "Extend stacking period in PoX v2."
