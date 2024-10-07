@@ -1,0 +1,40 @@
+contract:
+  name: zest
+  category: lending
+  description: Smart contract for the Zest lending platform.
+  lakehouse_db: stacks
+  lakehouse_version: 2
+  contracts: 
+    - contract_name: borrow_helper
+      address: SP2VCQJGH7PHP2DJK7Z0V48AGBHQAW3R3ZW1QF4N.borrow-helper-v1-3
+      functions:
+        - name: supply
+          description: Supply a Token to a Lending Vault
+          lakehouse_table: contract_call
+          fields:
+            - name: supply_token
+              source: contract_calls.asset_id
+              index: 5
+            - name: supply_amount
+              source: contract_calls.asset_amount
+              index: 5
+            - name: mint_token
+              source: contract_calls.asset_id
+              index: 4
+            - name: mint_amount
+              source: contract_calls.asset_amount
+              index: 4
+            - name: fee_token
+              source: contract_calls.asset_id
+              index: 1
+            - name: fee_amount
+              source: contract_calls.asset_amount
+              index 1
+        - name: withdraw
+          description:
+        - name: borrow
+          description:
+        - name: repay
+          description: 
+        - name: liquidation_call
+          description:
